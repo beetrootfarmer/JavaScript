@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elseIf</title>
+</head>
+<body>
+    <script>
+        var month = prompt("지금 몇 월입니까?","0");
+
+        if(month >= 9 && month <= 11){
+            document.write("크로스핏하기 좋은 가을이네요");
+        }else if(month >= 6 && month <= 8){
+            document.write("서핑하기 좋은 여름이네요");
+        }else if(month >= 3 && month <= 5){
+            document.write("크로스핏 오픈하기 좋은봄이네요");
+        }else if(month >= 1 && month <= 2 || month == 12){
+            document.write("스키타기 좋은 겨울이네요");
+        } else {
+            alert("1~12까지의 숫자를 입력해주세요.");
+            //현재 창 새로고침 메소드
+             location.reload();
+        }
+
+    </script>
+</body>
+</html>

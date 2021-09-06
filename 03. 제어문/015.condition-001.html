@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+        var walkAmount = prompt("당신은 하루에 몇보를 걷나요?","0");
+
+        // if else문 삼항연산자로 
+        var result = walkAmount >= 10000 ? "매우 좋은 습관을 지니고 있군요!<br>" : (10000-walkAmount) +"보 더 노력하세요!<br>";
+        document.write(result);
+
+        // 조건문에 포함할 수 있는 형식은 논리식, 변수 값([0,"",null, undefined] == flase처리, 조건문이 항상 false일 때 내부 결과 출력되지 않음)
+        // if(walkAmount >= 10000) {
+        //     document.write("매우 좋은 습관을 지니고 있군요!","<br>");
+        // }else {
+        //     document.write((10000-walkAmount)+"보 더 노력하세요!","<br>");
+        // }
+        document.write("==========END==========");
+    </script>
+    
+</body>
+</html>
