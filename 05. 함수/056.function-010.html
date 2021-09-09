@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입</title>
+</head>
+<body>
+    <script>
+        function checkWeight(name, height, weight) {
+            this.userName = name;
+            this.userHeight = height;
+            this.userWeight =weight;
+            this.minWeight;
+            this.maxWeight;
+
+            //checkWeight의 프로토타입에 메소드 추가
+            checkWeight.prototype.getInfo = function() {
+                var str = ""
+                str += "이름 : " + this.userName + ", ";
+                str += "체중 : " + this.userWeight + ", ";
+                str += "신장 : " + this.userHeight;
+                return str;
+            }
+            checkWeight.prototype.getResult = function() {
+                thiks.minWeight= (this.userHeight - 100) *0.9 -5;
+                this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+
+                if(this.userWeight >= this.maxWeight && this.userWeight <= this.maxWeight){
+                    return "정상몸무게입니다.";
+                }else if (this.userWeight < this.minWeight) {
+                    return "정상몸무게보다 미달입니다.";
+                }else  {
+                    return "정상몸무게보다 초과입니다.";
+                }
+            }
+        }
+        
+        var jung = new checkWeight("정보리", 165, 56);
+        var kim = new checkWeight("김그래", 174, 62);
+        console.log(jung);
+        console.log(kim);
+
+        document.write(jung.getInfo());
+        document.write(jung.getResult(),"<br>");
+        // document.write(kim.getInfo());
+        // document.write(kim.getResult(),"<br>");
+
+        //두 객체가 같은 함수를 사용하는지 확인
+        //프로토 타입의 메소드 호출
+        document.write(jung.getResult === kim.getResult);
+
+
+    </script>
+    
+</body>
+</html>
